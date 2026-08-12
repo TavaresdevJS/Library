@@ -44,11 +44,12 @@ function arrayLoop() {
 
   myLibrary.forEach(book => {
     const tr = document.createElement('tr');
+    tr.dataset.id = book.id;
     tr.innerHTML = `<td>${book.title}</td>
     <td>${book.author}</td>
     <td>${book.pages}</td>
     <td>${book.read}</td>
-    <td><button>Remove</button></td>`;
+    <td><button class="remove-btn">Remove</button></td>`;
     tableEl.appendChild(tr);
   });
 }
