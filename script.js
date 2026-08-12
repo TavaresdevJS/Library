@@ -2,10 +2,21 @@ const newBookBtn = document.getElementById('new-book-btn');
 const dialog = document.getElementById('new-book-dialog');
 const form = document.getElementById('new-book-form');
 const cancelBtn = document.getElementById('cancel-btn');
+
 const myLibrary = [];
 
 newBookBtn.addEventListener('click', () => {
   dialog.showModal();
+});
+
+form.addEventListener('submit', e => {
+  e.preventDefault();
+  const title = document.getElementById('title').value;
+  const author = document.getElementById('author').value;
+  const pages = +document.getElementById('pages').value;
+  const read = document.getElementById('read').checked;
+  addBookToLibrary(title, author, pages, read);
+  arrayLoop();
 });
 
 cancelBtn.addEventListener('click', () => {
