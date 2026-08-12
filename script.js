@@ -17,6 +17,8 @@ form.addEventListener('submit', e => {
   const read = document.getElementById('read').checked;
   addBookToLibrary(title, author, pages, read);
   arrayLoop();
+  dialog.close();
+  form.reset();
 });
 
 cancelBtn.addEventListener('click', () => {
