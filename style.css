@@ -80,6 +80,9 @@ h1 {
 
 body {
   font-family: "Nunito Sans", sans-serif;
+  background-color: #f4f1ea;
+  min-height: 100vh;
+  color: #2b2b3d;
 }
 
 .hero-header {
@@ -121,11 +124,169 @@ body {
   border: none;
   border-radius: 6px;
   cursor: pointer;
-  background-color: #e8b04b; /* solid gold, picks up the book/robe trim color */
-  color: #2b2b3d; /* dark text matches your header bg, strong contrast */
+  background-color: #e8b04b;
+  color: #2b2b3d;
   font-weight: 600;
+  transition: background-color 0.2s ease;
 }
 
 .hero-header button:hover {
   background-color: #f2c569;
+}
+
+main {
+  max-width: 1100px;
+  margin: 2.5rem auto;
+  padding: 0 1.5rem;
+}
+
+#library-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+#library-table thead {
+  background-color: #2b2b3d;
+  color: white;
+}
+
+#library-table th,
+#library-table td {
+  padding: 1rem 1.25rem;
+  text-align: left;
+}
+
+#library-table th {
+  font-weight: 600;
+  letter-spacing: 0.03em;
+}
+
+#library-table tbody tr {
+  border-bottom: 1px solid #e8e4db;
+  transition: background-color 0.15s ease;
+}
+
+#library-table tbody tr:last-child {
+  border-bottom: none;
+}
+
+#library-table tbody tr:hover {
+  background-color: #faf8f4;
+}
+
+.read-status {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.read-yes {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.read-no {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+.remove-btn {
+  background: #e74c3c;
+  color: white;
+  border: none;
+  padding: 0.4rem 0.85rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: background-color 0.2s ease;
+}
+
+.remove-btn:hover {
+  background: #c0392b;
+}
+
+#new-book-dialog {
+  border: none;
+  border-radius: 12px;
+  padding: 2rem;
+  width: min(420px, 90vw);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+}
+
+#new-book-dialog::backdrop {
+  background: rgba(0, 0, 0, 0.55);
+}
+
+#new-book-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+#new-book-form label {
+  font-weight: 600;
+  margin-bottom: -0.4rem;
+  color: #2b2b3d;
+}
+
+#new-book-form input[type="text"],
+#new-book-form input[type="number"] {
+  padding: 0.65rem 0.85rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  background: #fff;
+}
+
+#new-book-form input[type="text"]:focus,
+#new-book-form input[type="number"]:focus {
+  outline: 2px solid #e8b04b;
+  border-color: transparent;
+}
+
+#new-book-form input[type="checkbox"] {
+  width: 1.15rem;
+  height: 1.15rem;
+  accent-color: #e8b04b;
+}
+
+.dialog-buttons {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 0.75rem;
+}
+
+.dialog-buttons button {
+  flex: 1;
+  padding: 0.7rem;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.dialog-buttons button[type="submit"] {
+  background-color: #e8b04b;
+  color: #2b2b3d;
+}
+
+.dialog-buttons button[type="submit"]:hover {
+  background-color: #f2c569;
+}
+
+#cancel-btn {
+  background-color: #e0e0e0;
+  color: #333;
+}
+
+#cancel-btn:hover {
+  background-color: #d0d0d0;
 }
