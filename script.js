@@ -1,4 +1,11 @@
+const newBookBtn = document.getElementById('new-book-btn');
+const dialog = document.getElementById('new-book-dialog');
+const form = document.getElementById('new-book-form');
 const myLibrary = [];
+
+newBookBtn.addEventListener('click', () => {
+  dialog.showModal();
+});
 
 function Book(title, author, pages, read) {
   this.title = title;
