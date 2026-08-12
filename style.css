@@ -1,0 +1,55 @@
+h1 {
+  font-family: "Cinzel", serif;
+}
+
+body {
+  font-family: "Nunito Sans", sans-serif;
+}
+
+.hero-header {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #2b2b3d;
+}
+
+.mascot-header {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 100%;
+  width: auto;
+  object-fit: cover;
+  opacity: 0.85;
+  z-index: 0;
+}
+
+.hero-header h1,
+.hero-header button {
+  position: relative;
+  z-index: 1;
+  color: white;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+}
+
+.hero-header button {
+  margin-top: 0.75rem;
+  padding: 0.6rem 1.5rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  background-color: #e8b04b; /* solid gold, picks up the book/robe trim color */
+  color: #2b2b3d; /* dark text matches your header bg, strong contrast */
+  font-weight: 600;
+}
+
+.hero-header button:hover {
+  background-color: #f2c569;
+}

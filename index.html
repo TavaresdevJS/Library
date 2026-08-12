@@ -5,8 +5,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Library</title>
     <link rel="stylesheet" href="/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <scirpt src="/script.js"></scirpt>
+    <header class="hero-header">
+      <img
+        src="/images/hero_reading.png"
+        alt="Anime character reading a book"
+        class="mascot-header"
+      />
+      <h1>My Library</h1>
+      <button id="new-book-btn">New Book</button>
+    </header>
+    <main>
+      <table id="library-table">
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Pages</th>
+            <th>Read?</th>
+            <th>Remove</th>
+          </tr>
+        </thead>
+        <tbody id="library-body"></tbody>
+      </table>
+    </main>
+    <dialog id="new-book-dialog">
+      <form id="new-book-form">
+        <label for="title">Title</label>
+        <input type="text" id="title" required />
+
+        <label for="author">Author</label>
+        <input type="text" id="author" required />
+
+        <label for="pages">Pages</label>
+        <input type="number" id="pages" min="1" required />
+
+        <label for="read">Already read?</label>
+        <input type="checkbox" id="read" />
+
+        <div class="dialog-buttons">
+          <button type="submit">Add Book</button>
+          <button type="button" id="cancel-btn">Cancel</button>
+        </div>
+      </form>
+    </dialog>
+    <script src="/script.js"></script>
   </body>
 </html>
