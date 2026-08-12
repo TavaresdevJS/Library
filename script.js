@@ -13,9 +13,6 @@ function addBookToLibrary(title, author, pages, read) {
   myLibrary.push(newBook);
 }
 
-addBookToLibrary('The Hobbit', 'J.R.R. Tolkien', 310, true);
-console.log(myLibrary);
-
 function arrayLoop() {
   const tableEl = document.getElementById('library-body');
   tableEl.innerHTML = '';
@@ -27,5 +24,10 @@ function arrayLoop() {
     <td>${book.pages}</td>
     <td>${book.read}</td>
     <td><button>Remove</button></td>`;
+    tableEl.appendChild(tr);
   });
 }
+
+addBookToLibrary('The Hobbit', 'J.R.R. Tolkien', 310, true);
+console.log(myLibrary);
+arrayLoop();
