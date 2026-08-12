@@ -2,8 +2,9 @@ const newBookBtn = document.getElementById('new-book-btn');
 const dialog = document.getElementById('new-book-dialog');
 const form = document.getElementById('new-book-form');
 const cancelBtn = document.getElementById('cancel-btn');
+const tableEl = document.getElementById('library-body');
 
-const myLibrary = [];
+let myLibrary = [];
 
 newBookBtn.addEventListener('click', () => {
   dialog.showModal();
@@ -25,6 +26,15 @@ cancelBtn.addEventListener('click', () => {
   dialog.close();
 });
 
+tableEl.addEventListener('click', e => {
+  if (e.target.classList.contains('remove-btn')) {
+    const row = e.target.closest('tr');
+    const bookId = row.dataset.id;
+    myLibrary = myLibrary.filter(book => book.id !== bookId);
+    arrayLoop();
+  }
+});
+
 function Book(title, author, pages, read) {
   this.title = title;
   this.author = author;
@@ -39,7 +49,6 @@ function addBookToLibrary(title, author, pages, read) {
 }
 
 function arrayLoop() {
-  const tableEl = document.getElementById('library-body');
   tableEl.innerHTML = '';
 
   myLibrary.forEach(book => {
@@ -53,6 +62,10 @@ function arrayLoop() {
     tableEl.appendChild(tr);
   });
 }
+
+Book.prototype.toggleRead = function () {
+  this.read = !this.read;
+};
 
 addBookToLibrary('The Hobbit', 'J.R.R. Tolkien', 310, true);
 console.log(myLibrary);
