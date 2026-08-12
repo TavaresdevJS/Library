@@ -1,10 +1,15 @@
 const newBookBtn = document.getElementById('new-book-btn');
 const dialog = document.getElementById('new-book-dialog');
 const form = document.getElementById('new-book-form');
+const cancelBtn = document.getElementById('cancel-btn');
 const myLibrary = [];
 
 newBookBtn.addEventListener('click', () => {
   dialog.showModal();
+});
+
+cancelBtn.addEventListener('click', () => {
+  dialog.close();
 });
 
 function Book(title, author, pages, read) {
