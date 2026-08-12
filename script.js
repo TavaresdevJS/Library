@@ -67,6 +67,11 @@ function Book(title, author, pages, read) {
   this.id = crypto.randomUUID();
 }
 
+// Method to toggle the read status of a book
+Book.prototype.toggleRead = function () {
+  this.read = !this.read;
+};
+
 // Create a new book and add it to the library
 function addBookToLibrary(title, author, pages, read) {
   const newBook = new Book(title, author, pages, read);
@@ -75,11 +80,11 @@ function addBookToLibrary(title, author, pages, read) {
 
 // Render all books in the table
 function arrayLoop() {
-  tableEl.innerHTML = '';
+  tableEl.innerHTML = ''; // Clear the table first
 
   myLibrary.forEach(book => {
     const tr = document.createElement('tr');
-    tr.dataset.id = book.id;
+    tr.dataset.id = book.id; // Store the book ID on the row
     tr.innerHTML = `<td>${book.title}</td>
     <td>${book.author}</td>
     <td>${book.pages}</td>
@@ -93,10 +98,7 @@ function arrayLoop() {
   });
 }
 
-Book.prototype.toggleRead = function () {
-  this.read = !this.read;
-};
-
+// Example book
 addBookToLibrary('The Hobbit', 'J.R.R. Tolkien', 310, true);
 console.log(myLibrary);
 arrayLoop();
